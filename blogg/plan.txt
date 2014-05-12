@@ -1,0 +1,39 @@
+prosjektskogen.no
+
+<home>
+	"content": Forklarer hva prosjektet er og hvorfor det skal lages/er viktig inkl fremdriftslinje.
+	
+	<blogg>
+		"content": oppdateringer inkl fremdriftslinje.
+
+	<om oss>
+		"content": bli bedre kjent med grunderteamet
+
+	<kontakt>
+		"content": kontaktinfo.
+
+
+
+
+top: logo
+
+nav: [[se above]]
+
+maincontent: 
+	siste blogginnlegg
+	"content"...
+
+footer: lenker + siste innlegg på bloggen
+
+---
+
+blogg:
+	siste innlegg full width;
+
+	resten av innlegg 2-3 i bredden. Inkl bilde? 
+
+
+inspirasjon: 
+	timeline her: 
+	http://techcrunch.com/
+	

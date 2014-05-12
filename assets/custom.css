@@ -1,0 +1,206 @@
+html, body {
+	height:100%;
+	margin:0px;
+	padding:0px;
+}
+
+html, html a {
+    -webkit-font-smoothing: always;
+	-webkit-text-stroke: 1px rgba(0,0,0,0.08);
+}
+
+body {
+	background-color:#fff;
+	overflow-x:hidden;
+	font-family:spregular,arial,helvetica;
+	font-size:16px;
+}
+
+.ps_container {
+	padding:1em;
+}
+
+
+/* --- FONTS --- */
+
+
+@font-face {
+    font-family: 'splight';
+    src: url('fonts/source-sans-pro/light/sourcesanspro-light-webfont.eot');
+    src: url('fonts/source-sans-pro/light/sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/source-sans-pro/light/sourcesanspro-light-webfont.woff') format('woff'),
+         url('fonts/source-sans-pro/light/sourcesanspro-light-webfont.ttf') format('truetype'),
+         url('fonts/source-sans-pro/light/sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'spregular';
+    src: url('fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.eot');
+    src: url('fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.woff') format('woff'),
+         url('fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.ttf') format('truetype'),
+         url('fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3 {
+	font-family:splight,arial, helvetica;
+}
+
+h1 {font-size:2.2em;color:#333;line-height:1em;}
+h2 {font-size:2em;color:#333;line-height:1em;}
+h3 {font-size:1.75em;color:#333;line-height:.5em;}
+
+div, span, p, a,table {
+	font-family:spregular, arial, helvetica;
+	color:#333;
+}
+
+a:link {color:#2ecc71;} 
+a:visited {color:#3498db;}  
+a:hover {color:#29A35D;}  
+a:active {color:#34B7DB;}  
+
+a:link h2 {
+	color:#2ecc71;
+	text-decoration:underline;
+}
+
+a:hover h2 {
+	color:#29A35D;
+	text-decoration:underline;
+}
+
+hr { 
+	display: block; 
+	height: 8px;
+    border: 0; 
+	border-top: 8px solid #2ecc71;
+    margin: 1em 0; 
+	padding: 0; 
+}
+
+.header {
+	width:100%;
+	padding:0 1em;
+	height:50px;
+	overflow:hidden;
+	position:relative;
+	background-color:#fff;
+	z-index:999;
+	opacity:1;
+}
+
+a.ps-logo{
+	height:100%;
+	float:left;
+}
+
+a.ps-logo img {
+	height:100%;
+}
+
+a.ps-logo:link,
+a.ps-logo:visited {
+	color:#000;
+}
+
+a.ps-logo:hover {
+	color:#333;
+}
+	
+a.ps-logo:active {
+	color:#000;
+}
+
+
+/* --- BLOGAREA --- */
+.ps_container .ps-post {
+	border-left:3px solid #2ecc71;
+}
+
+
+/* --- FOOTER STYLES --- */
+
+footer {
+	background-color:#333;
+	position:relative;
+	width:100%;
+	padding:0;
+	margin:0;
+}
+
+footer p {
+	color:#fff;
+}	
+
+/* --- COMMENT.PHP --- */
+.comment-page {
+	-webkit-appearance:none;
+}
+
+.comment-page hr {
+	width:40%;
+	display:block;
+	color:#ededed;
+	margin:1.5em auto;
+}
+
+.post-comment-rows {
+	padding:1em 1em .5em 1em;
+}
+
+.post-comment-rows:nth-child(odd) {
+	background-color:#ededed;
+}
+
+.post-comment-desc-text {
+	font-size:.8em;
+	color:#333;
+}
+
+.post-comment-post-comment {
+	margin-top:1em;
+}
+
+.comment-page input {
+	border:2px solid #333;
+	width:100%;
+}
+	
+.comment-page textarea {
+   resize: none;
+   width:100%;
+   border:2px solid #333;
+}
+
+.comment-page input#submit {
+	background-color:#333;
+	color:#fff;
+	width:50%;
+	display:block;
+	margin:0 auto;
+}
+	
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {	
+	.ps_container .ps-post{
+	border:none !important;
+}
+h1 {font-size:3.5em;color:#333;line-height:1em;}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+

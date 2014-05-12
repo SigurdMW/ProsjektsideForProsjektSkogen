@@ -1,0 +1,53 @@
+body:after {
+	content: "less than 320";
+	font-size:100%;
+	font-weight:bold;
+	position:fixed;
+	bottom:0px;
+	width: 100%;
+	text-align: center;
+	background-color:hsla(1,60%,40%,0.7);
+	color: #ffffff;
+}
+
+@media only screen and (min-width: 320px) {
+	body:after {
+		content: "320 to 480";
+		background-color:hsla(90,60%,40%,0.7);
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	body:after {
+		content: "480 to 768";
+		background-color:hsla(180,60%,40%,0.7);
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	body:after {
+		content: "768 to 991";
+		background-color:hsla(270,60%,40%,0.7);
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	body:after {
+		content: "992 to 1199";
+		background-color:hsla(300,60%,40%,0.7);
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	body:after {
+		content: "1200 to 1399";
+		background-color:hsla(320,60%,40%,0.7);
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+	body:after {
+		content: "1400 and above";
+		background-color:hsla(320,60%,40%,0.7);
+	}
+}

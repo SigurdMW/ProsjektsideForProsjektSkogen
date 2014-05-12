@@ -1,0 +1,1146 @@
+/*
+Theme Name: Prosjektside for Prosjekt Skogen
+Theme URI: webawesome.no
+Description: Fullpage.js functions combined with Prosjekt Skogens content and styles.
+Version: 1.0
+Author: Sigurd Moland Wahl
+Author URI: prosjektskogen.no
+*/
+
+
+@CHARSET "ISO-8859-1";
+/* Reset CSS
+ * --------------------------------------- */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+a{
+	text-decoration:none;
+}
+table {
+    border-spacing: 0;    
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+strong{
+	font-weight: bold;
+}
+ol,ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+caption,th {
+    text-align: left;
+
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin:0;
+    padding:0;
+    color:#444;
+}
+q:before,q:after {
+    content:'';
+}
+abbr,acronym { border: 0;
+}
+
+
+/* ------------------------- Custom CSS --------------------------------------- */
+html, html a {
+    -webkit-font-smoothing: always;
+	-webkit-text-stroke: 1px rgba(0,0,0,0.08);
+}
+
+body{
+	font-family: arial,helvetica;
+	background-color:#ffffff !important;
+	font-size:16px;
+	font-family:source_sans_proregular, arial, helvetica;
+}
+
+/* --------------- box sizing border box, alle elementer ------------ */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+
+/*------------- FONTS ------------- */
+
+
+@font-face {
+    font-family: 'source_sans_prolight';
+    src: url('assets/fonts/source-sans-pro/light/sourcesanspro-light-webfont.eot');
+    src: url('assets/fonts/source-sans-pro/light/sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/source-sans-pro/light/sourcesanspro-light-webfont.woff') format('woff'),
+         url('assets/fonts/source-sans-pro/light/sourcesanspro-light-webfont.ttf') format('truetype'),
+         url('assets/fonts/source-sans-pro/light/sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'source_sans_proregular';
+    src: url('assets/fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.eot');
+    src: url('assets/fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.woff') format('woff'),
+         url('assets/fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.ttf') format('truetype'),
+         url('assets/fonts/source-sans-pro/regular/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'source_sans_proitalic';
+    src: url('assets/fonts/source-sans-pro/italic/sourcesanspro-it-webfont.eot');
+    src: url('assets/fonts/source-sans-pro/italic/sourcesanspro-it-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/source-sans-pro/italic/sourcesanspro-it-webfont.woff') format('woff'),
+         url('assets/fonts/source-sans-pro/italic/sourcesanspro-it-webfont.ttf') format('truetype'),
+         url('assets/fonts/source-sans-pro/italic/sourcesanspro-it-webfont.svg#source_sans_proitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'source_sans_prosemibold';
+    src: url('assets/fonts/source-sans-pro/semibold/sourcesanspro-semibold-webfont.eot');
+    src: url('assets/fonts/source-sans-pro/semibold/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/source-sans-pro/semibold/sourcesanspro-semibold-webfont.woff') format('woff'),
+         url('assets/fonts/source-sans-pro/semibold/sourcesanspro-semibold-webfont.ttf') format('truetype'),
+         url('assets/fonts/source-sans-pro/semibold/sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+	font-size: 3.5em;
+	color:#333;
+	font-family:source_sans_prolight, arial,helvetica;
+}
+
+h2 {
+	font-size: 1.75em;
+	color:#333;
+	font-family:source_sans_prolight, arial,helvetica;
+}
+p{
+	font-size: 1em;
+	font-family:source_sans_proregular, arial, helvetica;
+	color:#333;
+	max-width:90%;
+	margin:0 auto;
+}
+
+.section{
+	text-align:center;
+}
+
+
+/*----------- classie for menyen ------------ */
+
+
+.fixedmeny button {
+	background-color:none;
+	background:none;
+	position:relative;
+	padding:0px !important;
+	margin:0px;
+	min-width:0px;
+}
+
+/* menuTop.skjult ligger i head */
+
+.menuTop-open {
+	display:block;
+	top:0px;
+}
+
+#menuTop {
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+
+button.menyKnapp {
+	font-size:2.2em;
+	padding-left:7px !important;
+}
+
+div.lukkMenyKnapp {
+	cursor:pointer;
+	display:block;
+	padding:.72em 0;
+}
+
+nav {
+	margin:0px;
+	padding:0px;
+	position:relative;
+	z-index:999;
+	background-color:#ffffff;
+	width:100%;
+	opacity:0.94;
+}
+
+nav ul {
+	display:inline-block;
+	margin:0px !important;
+	padding:0px !important;
+	font-size:1.1em;
+	text-align:center;
+	width:100%;
+	list-style-type:none;
+}
+
+nav ul li {
+	display:block;
+
+}
+
+nav ul li hr {
+	margin:0 auto -2px auto;
+	padding:0px;
+	width:90%;
+	display: block;
+	height: 1px;
+    border: 0;
+	border-top: 1px solid #ededed;
+}
+
+nav ul li:active hr,
+nav ul li.active hr {
+	border-top: 1px solid #000;
+}
+
+nav ul li:nth-child(1):active hr,
+nav ul li:nth-child(1).active hr {
+	border-top: 1px solid #ededed;
+}
+
+nav ul li a,
+nav ul li a:link {
+	color:#333333;
+	display:block;
+	padding:.72em 0;
+}
+
+nav ul li a:active,
+nav ul li.active a{
+	color:#ffffff;
+	background-color:#000000;
+	margin-bottom:-1px;
+}
+
+
+button {
+	border:none;
+	background-color:#ffffff;
+	color:#333333;
+	padding:5px;
+	cursor:pointer;
+	font-family:source_sans_prolight, arial,helvetica;
+	min-width:100px;
+	margin:5px auto;
+	font-size:1em;
+}
+
+/* ----------- FØRSTE SIDE ------------------*/
+
+#section0 img {
+	width:25%;
+}
+
+#page-downSig {
+	background:none;
+	border:none;
+	font-size:5em;
+	margin-bottom:-50px !important;
+	position:absolute;
+	bottom:0;
+	margin-left:-50px;
+	left:50%;
+}
+
+/* thanks to www.hongkiat.com for this great css effect */
+
+.bounce-eff {
+	-webkit-animation: bounce 3s infinite;
+	-moz-animation: bounce 2.5s infinite;
+	-o-animation: bounce 2.5s infinite;
+	animation: bounce 3s infinite;
+}
+
+/* Webkit, Chrome and Safari */
+.dette {denne:stopp;}
+
+@-webkit-keyframes bounce {
+	0% {
+		-webkit-transform:translateY(-0%);
+		opacity:.9;
+	}
+	13% {
+		opacity:.8;
+	}
+	25% {
+		-webkit-transform:translateY(-30%);
+		opacity:.7;
+	}
+	38% {
+		opacity:.8;
+	}
+	50% {
+		-webkit-transform:translateY(-0%);
+		opacity:.9;
+	}
+	63% {
+		opacity:.8;
+	}
+	75% {
+		-webkit-transform:translateY(-15%);
+		opacity:.7;
+	}
+	87% {
+		opacity:.85;
+	}
+	100% {
+		-webkit-transform:translateY(-0%);
+		opacity:1;
+	}
+
+}
+
+/* Mozilla Firefox 15 below */
+@-moz-keyframes bounce {
+ 	0% {
+		-moz-transform:translateY(-0%);
+		opacity:.9;
+	}
+	13% {
+		opacity:.8;
+	}
+	25% {
+		-moz-transform:translateY(-30%);
+		opacity:.7;
+	}
+	38% {
+		opacity:.8;
+	}
+	50% {
+		-moz-transform:translateY(-0%);
+		opacity:.9;
+	}
+	63% {
+		opacity:.8;
+	}
+	75% {
+		-moz-transform:translateY(-15%);
+		opacity:.7;
+	}
+	87% {
+		opacity:.85;
+	}
+	100% {
+		-moz-transform:translateY(-0%);
+		opacity:1;
+	}
+}
+
+/* Opera 12.0 */
+@-o-keyframes bounce {
+  	0% {
+		-o-transform:translateY(-0%);
+		opacity:.9;
+	}
+	13% {
+		opacity:.8;
+	}
+	25% {
+		-o-transform:translateY(-30%);
+		opacity:.7;
+	}
+	38% {
+		opacity:.8;
+	}
+	50% {
+		-o-transform:translateY(-0%);
+		opacity:.9;
+	}
+	63% {
+		opacity:.8;
+	}
+	75% {
+		-o-transform:translateY(-15%);
+		opacity:.7;
+	}
+	87% {
+		opacity:.85;
+	}
+	100% {
+		-o-transform:translateY(-0%);
+		opacity:1;
+	}
+}
+
+/* W3, Opera 12+, Firefox 16+ */
+@keyframes bounce {
+  	0% {
+		transform:translateY(-0%);
+		opacity:.9;
+	}
+	13% {
+		opacity:.8;
+	}
+	25% {
+		transform:translateY(-30%);
+		opacity:.7;
+	}
+	38% {
+		opacity:.8;
+	}
+	50% {
+		transform:translateY(-0%);
+		opacity:.9;
+	}
+	63% {
+		opacity:.8;
+	}
+	75% {
+		transform:translateY(-15%);
+		opacity:.7;
+	}
+	87% {
+		opacity:.85;
+	}
+	100% {
+		transform:translateY(-0%);
+		opacity:1;
+	}
+}
+
+/*-------- SLIDE BUTTONS ------------- */
+
+.startPresentasjon {
+	font-size:1.5em;
+	background:none;
+	margin-top:0.35em !important;
+	color:#fff;
+	border:3px solid #fff !important;
+	position:relative;
+	margin:0 auto;
+}
+
+button.neste_slide {
+	font-size:80px;
+	margin-left:-80px;
+	cursor:pointer;
+	border:none;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	background:none;
+	position:absolute;
+	bottom:-30px;
+	left:50%;
+}
+
+.slide div.slideControl {
+	position:absolute;
+	bottom:5px;
+	width:20%;
+}
+
+.slide button.slideControlbtn {
+	background:none;
+	color:#fff;
+	min-width:100px;
+	display:inline-block;
+}
+
+.slideControl .slideNo {
+	clear:none;
+	max-width:60px;
+	width:auto;
+	color:#333;
+	display:inline-block;
+	text-align:center;
+	font-size:1.5em;
+}
+
+.controlArrow.next{
+	visibility:hidden;
+}
+.controlArrow.prev{
+	visibility:hidden;
+}
+
+/* ------------------ FREMGANG ------------------- */
+.ps-fremgang{
+	width:80%;
+	height:70px;
+	padding:20px 15px;
+	margin:10px auto 0 auto;
+}
+
+.ps-fremgang p {
+	display:none;
+	padding:20px 15px;
+	margin:0 auto;
+	max-width:100%;
+	font-size:0.75em;
+}
+
+.ps-fremgang .ps-prosjektlinje {
+	height:30px;
+	width:100%;
+	position:relative;
+}
+
+.prosjektfase1 {
+	width:20%;
+	height:100%;
+	background-color:#D0D7D9;
+	display:inline-block;
+	float:left;
+	cursor:pointer;
+}
+
+.prosjektfase1:hover,
+.prosjektfase2:hover,
+.prosjektfase3:hover {
+	opacity:0.8;
+}
+
+.faseactive {
+	border:3px solid #000;
+	opacity:0.8;
+}
+
+
+.prosjektfase2 {
+	width:50%;
+	height:100%;
+	background-color:#2ecc71;
+	display:inline-block;
+	float:left;
+	cursor:pointer;
+}
+
+.prosjektfase3 {
+	width:30%;
+	height:100%;
+	background-color:#9b59b6;
+	display:inline-block;
+	float:left;
+	cursor:pointer;
+}
+
+.fase1tekst, 
+.fase2tekst,
+.fase3tekst {
+	display:block !important;
+	width:100% !important;
+}
+
+.ps-prosjektlinje div:nth-child(4) {
+	position:absolute;
+	top:-50%;
+	left:30%;
+	font-size:40px;
+	cursor:pointer;
+}
+
+/* ----------- BLOGGPAGE ----------------- */
+
+
+
+
+
+/* -------------- OM OSS ------------------- */
+
+div.about-left {
+	width:50%;
+	float:left;
+	padding:1.5em;
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	transition: all 0.7s ease;
+}
+
+div [class*="about-"] p {
+	font-size:1em;
+	max-width:450px;
+	margin:0 auto;
+}
+
+.om-visible-ms-md {
+	display:none;
+}
+
+.om-visible-mob {
+	display:block;
+	font-family:source_sans_proitalic, arial, helvetica;
+}
+
+div.about-right {
+	width:50%;
+	float:right;
+	padding:1.5em;
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	transition: all 0.7s ease;
+}
+
+div.about-left img,
+div.about-right img {
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	-moz-border-radius:50%;
+	margin:0 auto;
+	clear:both;
+}
+
+#section4 .detaljerVisRight,
+#section4 .detaljerVisLeft {
+	background-color:#333;
+	position:absolute;
+	top:0px;
+	width:100%;
+	height:100%;
+}
+
+#detaljerLukkRoy,
+#detaljerLukkSig,
+#detaljerLukkInteressert {
+	display:block;
+	font-size:1em;
+	color:#ededed;
+	cursor:pointer;
+	float:left;
+}
+
+.testknapp:before {
+	content: "Les mer";
+}
+
+.testknapp2:before {
+	content: "Lukk" !important;
+}
+
+#section4 .detaljerVisRight {
+	right:0;
+}
+
+#section4 .detaljerVisLeft {
+	left:0;
+}
+
+#section4 .fadeout {
+	 -webkit-animation: fadeout 2s; 
+       -moz-animation: fadeout 2s; 
+        -ms-animation: fadeout 2s; 
+         -o-animation: fadeout 2s; 
+            animation: fadeout 2s;
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+
+@-moz-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+
+@-ms-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}​
+
+
+@-o-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}​
+}
+
+/*--- Transition ferdig.--- */
+
+#section4 .detaljerVisRight {
+	right:0;
+}
+
+#section4 .detaljerVis {
+	z-index:1;
+	 -webkit-animation: fadein .5s; 
+       -moz-animation: fadein .5s; 
+        -ms-animation: fadein .5s; 
+         -o-animation: fadein .5s; 
+            animation: fadein .5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}​
+
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}​
+/*bugfixxer*/{}
+
+.skyvtilhoyre {
+	-webkit-transform: translateX(600px);
+	-moz-transform: translateX(600px);
+}
+
+.skyvtilvenstre {
+	-webkit-transform: translateX(-600px);
+	-moz-transform: translateX(-600px);
+}
+
+#detaljerRoy , 
+#detaljerSig {
+	padding:.5em 1em;
+	margin:0;
+}
+
+#detaljerRoy h2, 
+#detaljerSig h2,
+#detaljerRoy p, 
+#detaljerSig p {
+	color:#fff;
+	max-width:100%;
+	width:100%;
+}
+
+#detaljerRoy p, 
+#detaljerSig p {
+	text-align:justify;
+}
+
+.VisabilityHiddenSig {
+	visibility:hidden;
+}
+
+.DisplayNoneSig {
+	display:none !important;
+}
+
+
+/* ----------------- KONTAKT OSS -------------- */
+
+#section5 #kontakt-holder {
+	-webkit-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+}
+
+#section5 .skyv-kontakt-holder {
+	margin-top:-300px;
+}
+	
+#section5 .detaljerInteressert {
+	width:100%;
+	height:400px;
+	left:0;
+	-webkit-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+	font-size:0.8em;
+}
+
+#section5 .detaljerInteressertBunn1 {
+	bottom:0 !important;
+}
+
+#section5 a#KontaktMailTo,
+#section5 a#KontaktMailTo:link {
+	text-decoration:underline;
+	font-size:3em;
+	color:#fff;
+	display:block;
+	padding:.2em;
+	max-width:200px;
+	margin:0px auto !important;
+}
+
+#section5 a#KontaktMailTo:visited {
+	font-family:source_sans_proitalic, arial, helvetica;
+}
+
+#section5 a#KontaktMailTo:hover {
+	color:#333;
+}
+#section5 a#KontaktMailTo:active {
+	color:blue;
+}
+
+#section5 .detaljerInteressertKnapp {
+	margin:0px !important;
+}
+
+#detaljerInteressertKnapp {
+	font-size:1em;
+}
+
+#section5 .detaljerInteressertVis {
+	position:absolute;
+	bottom:0;
+	background-color:#333;
+	z-index:9999;
+	padding:.5em 1em;
+	font-size:0.9em;
+	max-height:100%;
+}
+
+
+#section5 #detaljerIntressert h2 {
+	color:#fff;
+	text-align:center;
+	width:100%;
+}
+
+#section5 #detaljerIntressert p {
+	color:#fff;
+	max-width:100%;
+	text-align:justify;
+}
+
+#section5 #detaljerIntressert button {
+	float:right;
+}
+
+/* ------------ SM ------------------ */
+@media only screen and (min-width: 768px) {
+	body{
+		font-size:22px;
+	}
+	
+	p{
+		max-width:60%;
+	}
+	
+	button {
+	padding:.75px;
+	min-width:150px;
+	padding:.5em 1em;
+}
+
+
+#page-downSig {
+	margin-bottom:-50px !important;
+	padding:0px;
+	min-width:100px;
+}
+	
+	div.lukkMenyKnapp {
+	padding:0.5em;
+}
+
+
+div.lukkMenyKnapp:hover {
+	background-color:#000000;
+	color:#fff;
+}
+
+nav {
+	opacity:0.9;
+}
+	
+	nav ul {
+		font-size:1.1em;
+		text-align:left;
+	}
+	
+	nav ul li {
+	display:inline-block;
+}
+
+nav ul li hr  {
+	display:none;
+}
+
+	nav ul li a,
+nav ul li a:link {
+	color:#333333;
+	display:block;
+	padding:0.5em 0.7em;
+}
+
+nav ul li a:active,
+nav ul li.active a{
+	color:#ffffff;
+	background-color:#000000;
+}
+
+nav ul li a:hover{
+	color:#ffffff;
+	background-color:#000000;
+}
+	
+	nav ul li a,
+	nav ul li a:link {
+		padding:0.5em;
+	}
+	
+	button.menyKnapp {
+	font-size:2.5em;
+	}
+	
+	#section0 img {
+	width:17.5%;
+}
+
+	.slide .startPresentasjon {
+	margin-top:0.5em !important;
+	}
+	
+	.ps-fremgang p {
+	max-width:80%;
+	font-size:1em;
+	}
+
+	.om-visible-ms-md {
+	display:block;
+	}
+	
+	.om-visible-mob {
+		display:none;
+	}
+	
+	#section4 .detaljerVisRight,
+	#section4 .detaljerVisLeft {
+	max-width:600px;
+}
+	
+	#section5 .detaljerInteressert {
+	height:50%;
+}
+}
+
+
+/* -------------- MD -------------------------- */
+@media only screen and (min-width: 992px) {
+	body{
+		font-size:24px;
+	}
+	
+	button.menyKnapp {
+	font-size:2em;
+	}
+	
+	#section0 img {
+	width:10%;
+	}
+	
+	#section5 .detaljerInteressert {
+	height:300px;
+}
+}
+
+/**
+ * fullPage 1.6.6
+ * https://github.com/alvarotrigo/fullPage.js
+ * MIT licensed
+ *
+ * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#superContainer {
+    height: 100%;
+    position: relative;
+	
+	/* Touch detection for Windows 8 */
+	-ms-touch-action: none; 
+}
+.section {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.slide {
+    float: left;
+}
+.slide, .slidesContainer {
+    height: 100%;
+    display: block;
+}
+.slides {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.section.table, .slide.table {
+    display: table;
+    width: 100%;
+}
+.tableCell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.slidesContainer {
+    float: left;
+    position: relative;
+}
+.controlArrow {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-top: -38px;
+}
+.controlArrow.prev {
+    left: 15px;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent #fff transparent transparent;
+}
+.controlArrow.next {
+    right: 15px;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent #fff;
+}
+.scrollable {
+    overflow: scroll;
+}
+.easing {
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
+}
+#fullPage-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    top: 50%;
+    opacity: 1;
+}
+#fullPage-nav.right {
+    right: 17px;
+}
+#fullPage-nav.left {
+    left: 17px;
+}
+.fullPage-slidesNav {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    opacity: 1;
+}
+.fullPage-slidesNav.bottom {
+    bottom: 17px;
+}
+.fullPage-slidesNav.top {
+    top: 17px;
+}
+#fullPage-nav ul,
+.fullPage-slidesNav ul {
+  margin: 0;
+  padding: 0;
+}
+#fullPage-nav li,
+.fullPage-slidesNav li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 7px;
+    position:relative;
+}
+.fullPage-slidesNav li {
+    display: inline-block;
+}
+#fullPage-nav li a,
+.fullPage-slidesNav li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#fullPage-nav li .active span,
+.fullPage-slidesNav .active span {
+    background: #333;
+}
+#fullPage-nav span,
+.fullPage-slidesNav span {
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #000;
+    background: rgba(0, 0, 0, 0);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+.fullPage-tooltip {
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    top: -2px;
+}
+.fullPage-tooltip.right {
+    right: 20px;
+}
+.fullPage-tooltip.left {
+    left: 20px;
+}
